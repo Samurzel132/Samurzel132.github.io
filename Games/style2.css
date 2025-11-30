@@ -1,0 +1,146 @@
+body {
+    background: linear-gradient(90deg, rgba(37, 116, 186, 0.685) 0%, rgba(39, 30, 219, 0.616) 50%, rgba(67, 1, 221, 0.58) 100%);
+
+}
+
+
+
+.header {
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    margin: 10px;
+    color: rgb(24, 255, 255);
+    width: 300px;
+    height: auto;
+    border: 5px rebeccapurple solid;
+    border-radius: 30px;
+}
+
+
+.games {
+    color: gold;
+    background-color: rgb(175, 19, 175);
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 2vh;
+    justify-self: left;
+    align-content: center;
+    background-position: center;
+    background-size: cover;
+}
+
+.Spiele {
+    width: 30vw;
+    max-width: 200px;
+    height: 70vh;
+    border: teal 3px solid;
+    border-radius: 20px;
+    background-color: rgb(17, 255, 176,0.8);
+    color: rgb(30, 20, 220);
+    box-sizing: border-box;
+    margin: 10px;
+    position: fixed;
+    top: 0;
+    right: 10px;
+    padding-right:5px ;
+    padding-left: 10px;
+    overflow-y: auto;
+    margin-left: 1050px;
+    
+}
+
+.Spiele::-webkit-scrollbar {
+    color: aquamarine;
+}
+
+.blockT {
+    width: 47vw;
+    height: 32.5vh;
+    border: 5px solid rgb(86, 0, 0);
+    margin: 10px;
+    border-radius: 20px;
+    align-content: center;
+    padding: 10px;
+    padding-bottom: 20px;
+    font-size: large;
+    font-family: fantasy;
+    color: rgb(192, 228, 62);
+    -webkit-text-stroke: 0.5px #000000;
+    background: #7e04cf;
+    background: linear-gradient(158deg, rgba(126, 4, 207, 0.5) 18%, rgba(29, 51, 253, 0.5) 51%, rgba(69, 252, 75, 0.5) 93%);
+    position: fixed;
+    top: 5vh;
+    overflow-y: scroll;
+    scroll-behavior: inherit;
+}
+.blockT::-webkit-scrollbar{
+    color: #7e04cf;
+}
+.blockI::-webkit-scrollbar{
+    color: #7e04cf;
+}
+
+.blockI {
+    width: 47vw;
+    height: 32.5vh;
+    border: 5px solid rgb(86, 0, 0);
+    margin: 10px;
+    border-radius: 20px;
+    align-content: center;
+    padding: 10px;
+    padding-bottom: 20px;
+    font-size: large;
+    font-family: fantasy;
+    color: rgb(192, 228, 62);
+    -webkit-text-stroke: 0.5px #000000;
+    background: #7e04cf;
+    background: linear-gradient(158deg, rgba(126, 4, 207, 0.5) 18%, rgba(29, 51, 253, 0.5) 51%, rgba(69, 252, 75, 0.5) 93%);
+    position: fixed;
+    bottom: 5vh;
+    overflow-y: scroll;
+    scroll-behavior: inherit;
+}
+
+.Text {
+    line-height: 1.1;
+}
+
+.bts {
+
+    display: flex;
+    position: fixed;
+    bottom: 30px;
+    right: 45px;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(11, 144, 31);
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.bts:hover {
+    transform: scale(1.06);
+    filter: brightness(1.2);
+}
+
+.pic {
+    display: flex;
+    flex-direction: row;
+    width:30vw ;
+    max-width: 375px;
+    height:85vh ;
+    max-height: 500px;
+    position: fixed;
+    top: 10vh;
+    right: 230px;
+   
+    background-size:cover;
+    background-position: center;
+    border-radius: 20px;
+    border: #7e04cf solid 3px;
+
+}
