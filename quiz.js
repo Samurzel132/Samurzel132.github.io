@@ -56,15 +56,14 @@ const fragen = [{
 {
     frage: "Seit wann gibt es The Legend of Zelda?", antworten: [
         { antwort: "1989", state: false },
-        { antwort: "1986", state: true },
-        { antwort: "2011", state: false },
-        { antwort: "1970", state: false }]
-}, {
-    frage: "Profifrage: Wie heißt das auf dem Hauptbildschirm abgebildete Pokemon?", antworten: [
-        { antwort: "Yveltal", state: true },
-        { antwort: "Solgaleo", state: false },
-        { antwort: "Arceus", state: false },
-        { antwort: "Pikachu", state: false }]
+         { antwort: "1986", state: true }, 
+         { antwort: "2011", state: false },
+          { antwort: "1970", state: false }]
+}, { frage: "Profifrage: Wie heißt das auf dem Hauptbildschirm abgebildete Pokemon?", antworten: [
+    { antwort: "Yveltal", state: true }, 
+    { antwort: "Solgaleo", state: false }, 
+    { antwort: "Arceus", state: false }, 
+    { antwort: "Pikachu", state: false }] 
 },
 ];
 
@@ -142,7 +141,7 @@ nextbtn.addEventListener("click", () => {
         antwortbtn.innerHTML = "";
         nextbtn.style.display = "none";
 
-
+        
         if (punkte > highscore) {
             highscore = punkte;
             localStorage.setItem("highscore", highscore);
