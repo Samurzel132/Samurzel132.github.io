@@ -33,7 +33,7 @@ const fragen = [{
         { antwort: "Mario Kart", state: false }]
 },
 {
-    frage: "Welches Spiel hast du schon gesspielt?", antworten: [
+    frage: "Welches Spiel hast du schon gespielt?", antworten: [
         { antwort: "Minecraft", state: true },
         { antwort: "Mario Kart 8", state: true },
         { antwort: "AstroBot", state: true },
@@ -56,14 +56,15 @@ const fragen = [{
 {
     frage: "Seit wann gibt es The Legend of Zelda?", antworten: [
         { antwort: "1989", state: false },
-         { antwort: "1986", state: true }, 
-         { antwort: "2011", state: false },
-          { antwort: "1970", state: false }]
-}, { frage: "Profifrage: Wie heißt das auf dem Hauptbildschirm abgebildete Pokemon?", antworten: [
-    { antwort: "Yveltal", state: true }, 
-    { antwort: "Solgaleo", state: false }, 
-    { antwort: "Arceus", state: false }, 
-    { antwort: "Pikachu", state: false }] 
+        { antwort: "1986", state: true },
+        { antwort: "2011", state: false },
+        { antwort: "1970", state: false }]
+}, {
+    frage: "Profifrage: Wie heißt das auf dem Hauptbildschirm abgebildete Pokemon?", antworten: [
+        { antwort: "Yveltal", state: true },
+        { antwort: "Solgaleo", state: false },
+        { antwort: "Arceus", state: false },
+        { antwort: "Pikachu", state: false }]
 },
 ];
 
@@ -76,24 +77,25 @@ let currentFrageIndex = 0;
 let punkte = 0;
 
 
-let highscore = localStorage.getItem("highscore") || 0;
-highscoreElem.innerText = `Highscore: ${highscore}`;
+let highscore = localStorage.getItem("highscore");
+highscoreElem.innerText = `Highscore: ` + highscore;
 
 
 function startQuiz() {
     currentFrageIndex = 0;
     punkte = 0;
     nextbtn.style.display = "none";
-    showFrage();
+    Frage();
 }
 
 
-function showFrage() {
+function Frage() {
     resetState();
-    const currentFrage = fragen[currentFrageIndex];
-    frageElem.innerText = currentFrage.frage;
+//ändert die frage
+    frageElem.innerText = fragen[currentFrageIndex].frage;
 
-    currentFrage.antworten.forEach(answer => {
+    fragen[currentFrageIndex].antworten.forEach(function (answer) {
+        //macht die antworten
         const button = document.createElement("button");
         button.innerText = answer.antwort;
         button.classList.add("answerbtn");
@@ -103,7 +105,7 @@ function showFrage() {
     });
 }
 
-
+ //löscht alle 4 antworten
 function resetState() {
     nextbtn.style.display = "none";
     while (antwortbtn.firstChild) {
@@ -113,16 +115,13 @@ function resetState() {
 
 
 function selectAntwort(e) {
-    const selectedBtn = e.target;
-    const correct = selectedBtn.dataset.correct === "true";
-
-    if (correct) {
-        selectedBtn.style.backgroundColor = "green";
+    const auswahlBtn = e.target;
+    const richtig = auswahlBtn.dataset.correct == "true";
+//fügt nur punkte hinzu wenns richtig ist
+    if (richtig) {
         punkte++;
-    } else {
-        selectedBtn.style.backgroundColor = "red";
-    }
-
+    } 
+// antworten zu nem array machn
     Array.from(antwortbtn.children).forEach(btn => {
         btn.disabled = true;
         if (btn.dataset.correct === "true") btn.style.backgroundColor = "green";
@@ -131,21 +130,23 @@ function selectAntwort(e) {
     nextbtn.style.display = "block";
 }
 
-
+//ändert die frage
 nextbtn.addEventListener("click", () => {
     currentFrageIndex++;
+//fragen über dann Frage() wiederholen
     if (currentFrageIndex < fragen.length) {
-        showFrage();
+        Frage();
+        //wenn alle fragen durch sind
     } else {
-        frageElem.innerText = `Quiz beendet! Du hast ${punkte} von ${fragen.length} Punkten.`;
+        frageElem.innerText = 'Quiz beendet! Du hast ' + punkte + ' von ' + fragen.length + ' Punkten.';
         antwortbtn.innerHTML = "";
         nextbtn.style.display = "none";
 
-        
+
         if (punkte > highscore) {
             highscore = punkte;
             localStorage.setItem("highscore", highscore);
-            highscoreElem.innerText = `Highscore: ${highscore}`;
+            highscoreElem.innerText = `Highscore: `+ highscore;
         }
     }
 });
