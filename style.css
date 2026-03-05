@@ -1,110 +1,119 @@
-* {
-    box-sizing: border-box;
+body {
+    
+    margin: 5vh;
+    background: linear-gradient(90deg, rgba(209, 181, 152, 0.921) 0%, rgb(244, 200, 135)50%,rgb(227, 156, 109));
+    background-size: 400% 400%;
+    animation: gradientBackground 25s alternate-reverse infinite;
 }
 
-body {
-    margin: 0;
-    padding: 8px;
-    height: 100vh;
-    overflow: hidden; 
+
+
+#Kartensammlung {
+    border: 5px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    width: 10vw;
+    align-items: center;
+    align-self: center;
+}
+
+.ButtonI {
+    display: flex;
+    background-color: rgb(149, 109, 57);
+    border-radius: 30px;
+    width: 7vw;
+    min-width: 70px;
+    height: auto;
+    color: rgb(240, 220, 190);
+    font-size: larger;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    margin: 10px;
+        transition: transform 0.2s ease;
+
+}
+.ButtonE {
+    display: flex;
+    background-color: rgb(149, 109, 57);
+    border-radius: 30px;
+    width: 7vw;
+    min-width: 70px;
+    height: auto;
+    color: rgb(240, 220, 190);
+    font-size: larger;
+    text-align: center;
+    margin: 10px;
+    transition: transform 0.2s ease;
+
+}
+.ButtonE:hover {
+    transform: scale(1.1);
+    cursor: pointer
+}
+.ButtonI:hover {
+    transform: scale(1.1);
+    cursor: pointer
+}
+
+.move{
+    justify-self: center;
+    width:50vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+.size{
+    width: 200px;
+    height: 50px;
+    padding-left: 15px;
+    border: darkgoldenrod 1px solid;
+    border-radius: 10px;
+    background-color: rgb(255, 219, 208);
+    font-size: xx-large;
+}
+.size2{
+    
+    font-size: xx-large;
+    text-align: center;
+}
+h1 {
+    margin-top: 20vh;
+}
+
+.Card{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(
-        90deg,
-        rgba(0, 172, 240, 0.75),
-        rgba(0, 171, 165, 0.75),
-        rgba(4, 181, 46, 0.75)
-    );
-}
-
-
-.header {
-    padding: 10px 25px;
-    border-radius: 25px;
-    border: 4px solid #410081;
-    background-image: url(https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_SuperSmashBrosUltimate_02_image1280w.jpg);
-    background-size: cover;
-    background-position: center;
-    color: #eaff00;
-    text-shadow: 2px 2px 6px black;
-    align-items: center;
-}
-
-
-.Games {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 520px;
-}
-
-.game {
-    width: 150px;
-    aspect-ratio: 1 / 1;
-    margin: 6px;
+    border: 3px solid black;
     border-radius: 20px;
-    border: none;
-    font-weight: bold;
-    color: white;
-    text-shadow: 1px 1px 4px black;
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-    transition: transform 0.2s, filter 0.2s;
+    margin: 10px;
+    width: 20vw;
+    height: auto;
+    font-size: larger;
+    background-color: rgb(255, 216, 165);
+    font-family: monospace;
+    padding: 20px;
 }
 
-.game:hover {
-    transform: scale(1.08);
-    filter: brightness(1.2);
-}
+@keyframes gradientBackground {
+    0% {
+        background-position: 0%;
+    }
 
+    25% {
+        background-position: 25%;
+    }
 
-.game1 { background-image: url(https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png); }
-.game2 { background-image: url(https://image.api.playstation.com/vulcan/ap/rnd/202406/0500/8f15268257b878597757fcc5f2c9545840867bc71fc863b1.png); }
-.game3 { background-image: url(https://assets.nintendo.eu/image/upload/f_auto,c_limit,w_992,q_auto:low/MNS/NOE/70010000000126/SQ_NSwitch_MarioKart8Deluxe); }
-.game4 { background-image: url(https://assets1.ignimgs.com/2019/05/17/pokemon-y---button-1558057648001.jpg); }
-.game5 { background-image: url(https://assets.nintendo.eu/image/upload/f_auto,c_limit,w_992,q_auto:low/MNS/NOE/70010000000023/SQ_NSwitch_TheLegendOfZeldaBreathOfTheWild_E); }
+    50% {
+        background-position: 50%;
+    }
 
+    75% {
+        background-position: 75%;
+    }
 
-.info {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    max-width: 100%;
-}
-
-.gb {
-    width: 140px;
-    height: 30vh;
-    padding: 8px;
-    font-size: large;
-    border-radius: 18px;
-    color: aquamarine;
-    background-image: url(https://img.freepik.com/free-vector/modern-business-background-with-digital-technology-design_1361-3299.jpg);
-    background-size: cover;
-    text-shadow: 1px 1px 4px black;
-}
-
-
-.quizbtn {
-    width: 90%;
-    max-width: 520px;
-    height: 65px;
-    border-radius: 22px;
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #ff00cc;
-    border: none;
-    cursor: pointer;
-    background-image: url(https://media.gettyimages.com/id/1428792293/video/questions-marks-animated-4k-chroma-key-loopable.jpg?s=640x640&k=20&c=n52-bOOC-EFdIKjcCKUJbVCEmxahz5aJnxCUKQvbx6k=);
-    background-size: cover;
-    background-position: center;
-    text-shadow: 2px 2px 6px black;
-    margin-bottom: 10px;
-}
-.quizbtn:hover{
-    transform: scale(1.08);
+    100% {
+        background-position: 100%;
+    }
 }
